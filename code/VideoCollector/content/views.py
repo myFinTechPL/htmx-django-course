@@ -65,9 +65,6 @@ def feed(request):
     }
 
     if request.htmx:
-        import time
-
-        time.sleep(2)
         return render(request, "partials/feed_results.html", data)
 
     return render(request, "feed.html", data)
