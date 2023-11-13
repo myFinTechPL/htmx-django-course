@@ -8,9 +8,11 @@
       placeholder="Search for a video ..."
       class="form-control"
       type="text"
+      value="{{ search_text }}"
       hx-get="{% url 'search' %}"
-      hx-trigger="keyup changed delay:500ms"
+      hx-trigger="keyup[target.value.length > 1] changed delay:500ms"
       hx-target="#search-results"
+      hx-push-url="true">
 </div>
 
 <div class="videos search-results" id="search-results">
